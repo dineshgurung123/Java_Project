@@ -37,8 +37,6 @@ public class Enemy  extends  JPanel{
 
              g.drawImage(image, x, y,100,100, this);
 
-
-
     }
 
     public void update(){

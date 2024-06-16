@@ -10,7 +10,7 @@ public class GamePanel extends  JPanel implements  Runnable {
 
    Enemy enemy = new Enemy();
     
-  
+       Enemy[] enemies = new Enemy[10];
 
 
     public GamePanel() {
@@ -18,14 +18,27 @@ public class GamePanel extends  JPanel implements  Runnable {
             super();
             this.setPreferredSize(new Dimension(500,500));
             this.setBackground(Color.black);
+
+            for(int i=0; i<enemies.length; i++){
+
+              enemies[i] = new Enemy();
+            }
+  
+
+
     }
 
     public  void paintComponent(Graphics g){
                
        
            super.paintComponent(g);
-           enemy.paintComponent(g);
-          
+
+           for(int i=0; i<enemies.length; i++){
+
+              enemies[i].paintComponent(g); 
+            }
+
+         
     }
 
      public void startGame(){
@@ -35,7 +48,11 @@ public class GamePanel extends  JPanel implements  Runnable {
      }
 
      public void update(){
-            enemy.update();
+            
+       for(int i=0; i<enemies.length; i++){
+
+              enemies[i].update();
+            }
 
      }
 
